@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+/* Colores del proyecto */
+.bg-primario {
+    background-color: #3F9AAE;
+    color: white;
+}
+
+.bg-secundario {
+    background-color: #79C9C5;
+}
+
+.bg-claro {
+    background-color: #FFE2AF;
+}
+
+.bg-acento {
+    background-color: #F96E5B;
+    color: white;
+}
+
+/* Botones */
+.btn-primario {
+    background-color: #3F9AAE;
+    color: white;
+}
+
+.btn-acento {
+    background-color: #F96E5B;
+    color: white;
+}
+
+/* Espaciado */
+.section-padding {
+    padding: 60px 0;
+}
+
+.m {
+    display: inline-block;
+    border: 2px solid #F96E5B;
+    padding: 10px 120px;
+    color: #F96E5B;
+}
+
+.icono {
+    width: 160px;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.icono1 {
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.icono1 img {
+    width: 30px;
+}
+
+footer img {
+    transition: 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+}
+
+.titulo-seccion {
+    display: inline-block;
+    border: 2px solid #F96E5B;
+    padding: 10px 120px;
+}
+.card img{
+    display: block;
+    margin: 0 auto;
+}
