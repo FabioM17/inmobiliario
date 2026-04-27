@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Residencial El Bosque – Global Inmobiliaria</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .proj-hero { position:relative; height:62vh; min-height:420px; overflow:hidden; }
+    .proj-hero img { width:100%; height:100%; object-fit:cover; filter:brightness(.38); display:block; }
+    .proj-hero__content { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:60px 48px; }
+    .proj-hero__tag { font-size:.65rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#2563eb; margin-bottom:12px; }
+    .proj-hero__title { font-size:clamp(2.6rem,6vw,5.2rem); font-weight:900; line-height:1; margin:0 0 14px; }
+    .proj-hero__desc { font-size:.95rem; font-weight:300; color:rgba(255,255,255,.55); max-width:480px; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
+    .stat { padding:40px 48px; border-right:1px solid rgba(255,255,255,.06); }
+    .stat:last-child { border-right:none; }
+    .stat__label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:8px; }
+    .stat__val { font-size:1.05rem; font-weight:900; }
+    .proj-body { display:grid; grid-template-columns:1fr 320px; }
+    .proj-main { padding:64px 48px; border-right:1px solid rgba(255,255,255,.06); }
+    .proj-main p { font-size:.9rem; font-weight:300; color:rgba(255,255,255,.52); line-height:1.9; }
+    .proj-aside { padding:64px 36px; }
+    .aside-label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:18px; }
+    .amenity-list { list-style:none; margin:0; padding:0; }
+    .amenity-list li { display:flex; align-items:center; gap:10px; font-size:.8rem; font-weight:300; color:rgba(255,255,255,.52); padding:10px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+    .amenity-list li::before { content:''; display:block; width:5px; height:5px; border-radius:50%; background:#2563eb; flex-shrink:0; }
+    .cta-box { margin-top:32px; padding:28px; border:1px solid rgba(37,99,235,.3); background:rgba(37,99,235,.06); }
+    .cta-box p { font-size:.8rem; color:rgba(255,255,255,.42); line-height:1.65; margin-bottom:18px; }
+    .proj-nav { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(255,255,255,.06); }
+    .proj-nav__item { padding:32px 48px; text-decoration:none; color:#fff; transition:background .2s; }
+    .proj-nav__item:hover { background:rgba(255,255,255,.03); }
+    .proj-nav__item--next { border-left:1px solid rgba(255,255,255,.06); text-align:right; }
+    .proj-nav__dir { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:6px; }
+    .proj-nav__name { font-size:.9rem; font-weight:700; }
+    @media(max-width:900px){ .stats{grid-template-columns:repeat(2,1fr);} .proj-body{grid-template-columns:1fr;} .proj-main{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);} }
+    @media(max-width:560px){ .proj-hero__content,.proj-main,.proj-aside,.proj-nav__item{padding:40px 24px;} .stat{padding:28px 24px;} }
+  </style>
+</head>
+<body>
+<header class="pg-header">
+  <a class="pg-header__logo" href="../../index.html">
+    <img src="../../assets/img/logo.png" alt="Global">
+    <span>Global</span>
+  </a>
+  <ul class="pg-header__nav">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../proyectos.html" class="is-active">Proyectos</a></li>
+    <li><a href="../nosotros.html">Nosotros</a></li>
+    <li><a href="../contacto.html">Contacto</a></li>
+  </ul>
+</header>
+
+<main class="pg-wrap">
+  <div class="proj-hero">
+    <img src="../../assets/img/about-philosophy.jpg" alt="Residencial El Bosque">
+    <div class="proj-hero__content">
+      <p class="proj-hero__tag">Inversión</p>
+      <h1 class="proj-hero__title">Residencial El Bosque</h1>
+      <p class="proj-hero__desc">Proyecto de alta plusvalía en zona exclusiva, ROI del 18% anual.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><p class="stat__label">Área total</p><p class="stat__val">12,000 m²</p></div>
+    <div class="stat"><p class="stat__label">Unidades</p><p class="stat__val">80 apartamentos</p></div>
+    <div class="stat"><p class="stat__label">Entrega</p><p class="stat__val">Enero 2027</p></div>
+    <div class="stat"><p class="stat__label">Precio</p><p class="stat__val">Desde $95,000</p></div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-main">
+      <p class="pg-section__eyebrow">Descripción</p>
+      <h2 class="pg-section__title" style="margin-bottom:24px;">Acerca del proyecto</h2>
+      <p>Residencial El Bosque está posicionado en uno de los corredores de mayor crecimiento del país. Con un ROI proyectado del 18% anual, es ideal para inversionistas que buscan capitalizar en un mercado en plena expansión.</p>
+    </div>
+    <aside class="proj-aside">
+      <p class="aside-label">Amenidades</p>
+      <ul class="amenity-list">
+        <li>ROI 18% anual</li>
+        <li>Alta plusvalía</li>
+        <li>Administración incluida</li>
+        <li>Zona de rápido crecimiento</li>
+        <li>Servicios completos</li>
+        <li>Escrituración ágil</li>
+      </ul>
+      <div class="cta-box">
+        <p>¿Te interesa? Un asesor te dará toda la información sin compromiso.</p>
+        <a class="btn btn--solid" href="../contacto.html">Solicitar información</a>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="proj-nav">
+    <a class="proj-nav__item" href="proyecto-4.html"><p class="proj-nav__dir">← Anterior</p><p class="proj-nav__name">Plaza Colón</p></a>
+    <a class="proj-nav__item proj-nav__item--next" href="proyecto-6.html"><p class="proj-nav__dir">Siguiente →</p><p class="proj-nav__name">Lotes Santa Cruz</p></a>
+  </nav>
+</main>
+
+<footer class="pg-footer">
+  <span>© 2025 Global Inmobiliaria</span>
+  <a href="../contacto.html">Contáctanos</a>
+</footer>
+</body>
+</html>

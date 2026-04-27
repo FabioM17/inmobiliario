@@ -1,0 +1,27 @@
+/*
+  CSS source map for maintenance.
+  This file documents the equivalent pure-CSS modules created from the old Sass structure.
+  The project still loads ./main.css in index.html to preserve the exact visual output.
+
+  Base:
+  - base/fonts.css
+  - base/normalize.css
+  - base/vars.css
+  - base/selection-colors.css
+  - base/body-element.css
+
+  Layouts:
+  - layouts/grid.css
+
+  Modules:
+  - modules/device-notification.css
+  - modules/section.css
+  - modules/header.css
+  - modules/side-nav.css
+  - modules/intro.css
+  - modules/work.css
+  - modules/about.css
+  - modules/contact.css
+  - modules/hire.css
+  - modules/outer-nav.css
+*/
