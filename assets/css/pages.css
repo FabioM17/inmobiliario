@@ -32,13 +32,13 @@ body {
   text-decoration: none;
   color: #fff;
 }
-.pg-header__logo img { width: 30px; }
-.pg-header__logo span {
+.pg-header__logo img { width: 100px; padding-top:40px; }
+/*.pg-header__logo span {
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
-}
+}*/
 .pg-header__nav {
   display: flex;
   align-items: center;
