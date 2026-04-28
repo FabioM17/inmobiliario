@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Jardines del Norte – Global Inmobiliaria</title>
+  <title>Jardines del Norte - InmoByte</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../assets/css/main.css">
@@ -18,31 +18,40 @@
     .stat:last-child { border-right:none; }
     .stat__label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:8px; }
     .stat__val { font-size:1.05rem; font-weight:900; }
-    .proj-body { display:grid; grid-template-columns:1fr 320px; }
-    .proj-main { padding:64px 48px; border-right:1px solid rgba(255,255,255,.06); }
+    .proj-body { display:grid; grid-template-columns:1.5fr 1fr; gap:32px; padding:64px 48px; }
+    .proj-main { padding:0; border-right:none; }
     .proj-main p { font-size:.9rem; font-weight:300; color:rgba(255,255,255,.52); line-height:1.9; }
-    .proj-aside { padding:64px 36px; }
+    .media-3d-box { width:100%; height:100%; min-height:300px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,0.06); border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .proj-aside { grid-column:1 / -1; padding:32px 0; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); margin-top:16px; }
     .aside-label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:18px; }
-    .amenity-list { list-style:none; margin:0; padding:0; }
-    .amenity-list li { display:flex; align-items:center; gap:10px; font-size:.8rem; font-weight:300; color:rgba(255,255,255,.52); padding:10px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+    .amenity-list { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:24px; }
+    .amenity-list li { display:flex; align-items:center; gap:10px; font-size:.8rem; font-weight:300; color:rgba(255,255,255,.52); }
     .amenity-list li::before { content:''; display:block; width:5px; height:5px; border-radius:50%; background:#2563eb; flex-shrink:0; }
-    .cta-box { margin-top:32px; padding:28px; border:1px solid rgba(37,99,235,.3); background:rgba(37,99,235,.06); }
-    .cta-box p { font-size:.8rem; color:rgba(255,255,255,.42); line-height:1.65; margin-bottom:18px; }
+    .cta-box { margin-top:24px; padding:28px; border:1px solid rgba(37,99,235,.3); background:rgba(37,99,235,.06); display:flex; justify-content:space-between; align-items:center; }
+    .cta-box p { font-size:.8rem; color:rgba(255,255,255,.42); margin:0; }
+    .media-gallery { grid-column:1 / -1; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,220px)); justify-content:center; gap:16px; margin-top:16px; }
+    .media-gallery img { width:100%; height:140px; object-fit:cover; border-radius:6px; cursor:pointer; border:1px solid rgba(255,255,255,0.06); transition:transform 0.2s ease,opacity 0.2s ease; }
+    .media-gallery img:hover { transform:translateY(-3px); opacity:0.8; border-color:rgba(37,99,235,0.5); }
+    .lightbox { display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease; }
+    .lightbox.is-active { display:flex; opacity:1; }
+    .lightbox-content { max-width:90%; max-height:90vh; border-radius:8px; box-shadow:0 4px 25px rgba(0,0,0,0.5); object-fit:contain; }
+    .lightbox-close { position:absolute; top:20px; right:40px; color:#fff; font-size:45px; font-weight:bold; cursor:pointer; transition:color 0.2s ease; }
+    .lightbox-close:hover { color:#2563eb; }
     .proj-nav { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(255,255,255,.06); }
     .proj-nav__item { padding:32px 48px; text-decoration:none; color:#fff; transition:background .2s; }
     .proj-nav__item:hover { background:rgba(255,255,255,.03); }
     .proj-nav__item--next { border-left:1px solid rgba(255,255,255,.06); text-align:right; }
     .proj-nav__dir { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:6px; }
     .proj-nav__name { font-size:.9rem; font-weight:700; }
-    @media(max-width:900px){ .stats{grid-template-columns:repeat(2,1fr);} .proj-body{grid-template-columns:1fr;} .proj-main{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);} }
+    @media(max-width:900px){ .proj-body{grid-template-columns:1fr;padding:40px 24px;} .cta-box{flex-direction:column;gap:16px;text-align:center;} }
     @media(max-width:560px){ .proj-hero__content,.proj-main,.proj-aside,.proj-nav__item{padding:40px 24px;} .stat{padding:28px 24px;} }
   </style>
 </head>
+
 <body>
 <header class="pg-header">
   <a class="pg-header__logo" href="../../index.html">
-    <img src="../../assets/img/logo.png" alt="Global">
-    <span>Global</span>
+    <img src="../../assets/img/logo.png" alt="InmoByte">
   </a>
   <ul class="pg-header__nav">
     <li><a href="../../index.html">Home</a></li>
@@ -54,53 +63,97 @@
 
 <main class="pg-wrap">
   <div class="proj-hero">
-    <img src="../../assets/img/work-metiew-smith.jpg" alt="Jardines del Norte">
+    <img src="../../assets/img/work-victory.jpg" alt="Casa">
     <div class="proj-hero__content">
       <p class="proj-hero__tag">Residencial</p>
       <h1 class="proj-hero__title">Jardines del Norte</h1>
-      <p class="proj-hero__desc">Casas familiares rodeadas de áreas verdes y espacios comunes.</p>
+      <p class="proj-hero__desc">Exclusivo complejo boutique de solo 10 casas diseñado para tu tranquilidad. Cuenta con seguridad 24/7, estacionamiento privado y de visitas, además de extensas áreas verdes y canchas deportivas ideales para armar un buen partido de domingo sin salir de casa.</p>
     </div>
   </div>
 
   <div class="stats">
-    <div class="stat"><p class="stat__label">Área total</p><p class="stat__val">6,800 m²</p></div>
-    <div class="stat"><p class="stat__label">Unidades</p><p class="stat__val">28 casas</p></div>
-    <div class="stat"><p class="stat__label">Entrega</p><p class="stat__val">Marzo 2026</p></div>
-    <div class="stat"><p class="stat__label">Precio</p><p class="stat__val">Desde $120,000</p></div>
+    <div class="stat"><p class="stat__label">Área total</p><p class="stat__val">2,700 m²</p></div>
+    <div class="stat"><p class="stat__label">Unidades</p><p class="stat__val">10</p></div>
+    <div class="stat"><p class="stat__label">Entrega</p><p class="stat__val">Enero 2026</p></div>
+    <div class="stat"><p class="stat__label">Precio</p><p class="stat__val">A partir de $175,000</p></div>
   </div>
 
   <div class="proj-body">
+
     <div class="proj-main">
       <p class="pg-section__eyebrow">Descripción</p>
       <h2 class="pg-section__title" style="margin-bottom:24px;">Acerca del proyecto</h2>
-      <p>Jardines del Norte es un proyecto de casas unifamiliares pensado para familias que buscan tranquilidad sin alejarse de la ciudad. Cada casa tiene jardín propio, dos niveles y acceso a áreas recreativas comunes.</p>
+      <p>Jardines del Norte es un proyecto residencial boutique estrictamente limitado a 10 exclusivas casas, pensado para quienes valoran la privacidad sin renunciar a la convivencia. Cada vivienda cuenta con estacionamiento privado, garantizando tu comodidad en el día a día, mientras que tus invitados disponen de un área de parqueo exclusiva para visitas.
+
+        El complejo está diseñado para fomentar un estilo de vida saludable, ofreciendo amplias áreas verdes y espacios deportivos de uso común. Todo esto dentro de un entorno completamente resguardado, respaldado por un sistema de seguridad integral y control de acceso las 24 horas del día, los 7 días de la semana.</p>
     </div>
+
+    <div class="media-3d-box">
+      <span style="color: rgba(255,255,255,0.28); font-size: 0.8rem">[ Contenedor del Modelo 3D ]</span>
+    </div>
+
     <aside class="proj-aside">
-      <p class="aside-label">Amenidades</p>
+      <p class="aside-label">Especificaciones y Amenidades</p>
       <ul class="amenity-list">
-        <li>Parque infantil</li>
-        <li>Senderos peatonales</li>
-        <li>Cancha deportiva</li>
-        <li>Casa club</li>
-        <li>Áreas verdes comunes</li>
-        <li>Acceso controlado</li>
+        <li>Espacios deportivos y Verdes</li>
+        <li>Estacionamientos privados</li>
+        <li>Parqueo de visitas</li>
+        <li>Seguridad 24/7</li>
       </ul>
+    </aside>
+
+    <div class="media-gallery">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-1">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-2">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-3">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-4">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-5">
+      <img src="../../assets/img/CasaDos/#" alt="angulo-6">
+    </div>
+
+    <aside class="proj-aside">
       <div class="cta-box">
         <p>¿Te interesa? Un asesor te dará toda la información sin compromiso.</p>
         <a class="btn btn--solid" href="../contacto.html">Solicitar información</a>
       </div>
     </aside>
   </div>
-
   <nav class="proj-nav">
-    <a class="proj-nav__item" href="proyecto-1.html"><p class="proj-nav__dir">← Anterior</p><p class="proj-nav__name">Torre Mirando</p></a>
-    <a class="proj-nav__item proj-nav__item--next" href="proyecto-3.html"><p class="proj-nav__dir">Siguiente →</p><p class="proj-nav__name">Centro Empresarial</p></a>
+    <a class="proj-nav__item" href="../proyectos.html"><p class="proj-nav__dir">← Volver</p><p class="proj-nav__name">Todos los proyectos</p></a>
+    <a class="proj-nav__item proj-nav__item--next" href="proyecto-3.html"><p class="proj-nav__dir">Siguiente →</p><p class="proj-nav__name">No se sabe aun</p></a>
   </nav>
 </main>
 
 <footer class="pg-footer">
-  <span>© 2025 Global Inmobiliaria</span>
+  <span>© 2025 InmoByte</span>
   <a href="../contacto.html">Contáctanos</a>
 </footer>
+<div id="miLightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content" src="" alt="Imagen ampliada">
+</div>
 </body>
+<script>
+  const lightbox = document.getElementById('miLightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const imagenesGaleria = document.querySelectorAll('.media-gallery img');
+
+  imagenesGaleria.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('is-active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('is-active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('is-active');
+    }
+  });
+</script>
 </html>
