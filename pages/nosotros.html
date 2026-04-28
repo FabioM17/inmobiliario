@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <title>Nosotros – Global Inmobiliaria</title>
   <meta charset="utf-8">
@@ -7,142 +8,352 @@
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/pages.css">
   <style>
-    .metrics { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
-    .metric { padding:52px 48px; border-right:1px solid rgba(255,255,255,.06); }
-    .metric:last-child { border-right:none; }
-    .metric__num { font-size:clamp(2.4rem,4vw,3.8rem); font-weight:900; line-height:1; margin-bottom:6px; }
-    .metric__num em { color:#2563eb; font-style:normal; }
-    .metric__label { font-size:.7rem; font-weight:300; color:rgba(255,255,255,.38); letter-spacing:.06em; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
 
-    .duo { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid rgba(255,255,255,.06); }
-    .duo__img { overflow:hidden; min-height:400px; }
-    .duo__img img { width:100%; height:100%; object-fit:cover; filter:brightness(.6); display:block; transition:transform .6s; }
-    .duo__img:hover img { transform:scale(1.04); }
-    .duo__text { padding:72px 56px; display:flex; flex-direction:column; justify-content:center; }
-    .duo.flip { direction:rtl; }
-    .duo.flip > * { direction:ltr; }
+    .metric {
+      padding: 52px 48px;
+      border-right: 1px solid rgba(255, 255, 255, .06);
+    }
 
-    .awards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-    .award { background:#111; padding:36px 40px; }
-    .award__year { font-size:.6rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#2563eb; margin-bottom:10px; }
-    .award__name { font-size:.95rem; font-weight:700; margin-bottom:6px; }
-    .award__org { font-size:.78rem; font-weight:300; color:rgba(255,255,255,.38); }
+    .metric:last-child {
+      border-right: none;
+    }
 
-    .team { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-    .member { background:#111; padding:48px 36px; text-align:center; }
-    .member__avatar { font-size:2.4rem; margin-bottom:18px; }
-    .member__name { font-size:1rem; font-weight:700; margin-bottom:4px; }
-    .member__role { font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:16px; }
-    .member__bio { font-size:.8rem; font-weight:300; color:rgba(255,255,255,.42); line-height:1.75; }
+    .metric__num {
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
 
-    .cta-strip { padding:80px 48px; text-align:center; }
-    .cta-strip h2 { font-size:clamp(1.8rem,3.5vw,3rem); font-weight:900; margin-bottom:16px; }
-    .cta-strip p { font-size:.9rem; font-weight:300; color:rgba(255,255,255,.45); margin-bottom:36px; }
-    .cta-strip .btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .metric__num em {
+      color: #2563eb;
+      font-style: normal;
+    }
+
+    .metric__label {
+      font-size: .7rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .38);
+      letter-spacing: .06em;
+    }
+
+    .duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .duo__img {
+      overflow: hidden;
+      min-height: 400px;
+    }
+
+    .duo__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.6);
+      display: block;
+      transition: transform .6s;
+    }
+
+    .duo__img:hover img {
+      transform: scale(1.04);
+    }
+
+    .duo__text {
+      padding: 72px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .duo.flip {
+      direction: rtl;
+    }
+
+    .duo.flip>* {
+      direction: ltr;
+    }
+
+    .awards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .award {
+      background: #111;
+      padding: 36px 40px;
+    }
+
+    .award__year {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .award__name {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .award__org {
+      font-size: .78rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .38);
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .member {
+      background: #111;
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .member__avatar {
+      font-size: 2.4rem;
+      margin-bottom: 18px;
+    }
+
+    .member__name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .member__role {
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35);
+      margin-bottom: 16px;
+    }
+
+    .member__bio {
+      font-size: .8rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .42);
+      line-height: 1.75;
+    }
+
+    .cta-strip {
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .cta-strip p {
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .45);
+      margin-bottom: 36px;
+    }
+
+    .cta-strip .btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     @media(max-width:900px) {
-      .metrics { grid-template-columns:repeat(2,1fr); }
-      .duo { grid-template-columns:1fr; }
-      .duo__img { min-height:260px; }
-      .duo__text { padding:48px 32px; }
-      .team, .awards { grid-template-columns:1fr; }
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .duo {
+        grid-template-columns: 1fr;
+      }
+
+      .duo__img {
+        min-height: 260px;
+      }
+
+      .duo__text {
+        padding: 48px 32px;
+      }
+
+      .team,
+      .awards {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media(max-width:560px) {
-      .metric { padding:36px 24px; }
-      .cta-strip { padding:56px 24px; }
+      .metric {
+        padding: 36px 24px;
+      }
+
+      .cta-strip {
+        padding: 56px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
-<header class="pg-header">
-  <a class="pg-header__logo" href="../index.html">
-    <img src="../assets/img/logo.png" alt="Global">
-    <span>Global</span>
-  </a>
-  <ul class="pg-header__nav">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="proyectos.html">Proyectos</a></li>
-    <li><a href="nosotros.html" class="is-active">Nosotros</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</header>
+  <header class="pg-header">
+    <a class="pg-header__logo" href="../index.html">
+      <img src="../assets/img/logo.png" alt="Global">
+      <span>Inmobyte</span>
+    </a>
+    <ul class="pg-header__nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="nosotros.html" class="is-active">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </header>
 
-<main class="pg-wrap">
+  <main class="pg-wrap">
 
-  <section class="pg-hero">
-    <p class="pg-hero__eyebrow">Quiénes somos</p>
-    <h1 class="pg-hero__title">Construimos<br>espacios para<br>vivir mejor</h1>
-    <p class="pg-hero__sub">Más de 15 años transformando ciudades y creando comunidades donde las personas encuentran su hogar ideal.</p>
-  </section>
+    <section class="pg-hero">
+      <p class="pg-hero__eyebrow">Quiénes somos</p>
+      <h1 class="pg-hero__title">Construimos<br>espacios para<br>vivir mejor</h1>
+      <p class="pg-hero__sub">Más de 15 años transformando ciudades y creando comunidades donde las personas encuentran
+        su hogar ideal.</p>
+    </section>
 
-  <div class="metrics">
-    <div class="metric"><p class="metric__num">15<em>+</em></p><p class="metric__label">Años de experiencia</p></div>
-    <div class="metric"><p class="metric__num">1,200<em>+</em></p><p class="metric__label">Familias beneficiadas</p></div>
-    <div class="metric"><p class="metric__num">48</p><p class="metric__label">Proyectos entregados</p></div>
-    <div class="metric"><p class="metric__num">6</p><p class="metric__label">Países de presencia</p></div>
-  </div>
-
-  <!-- Historia -->
-  <div id="historia" class="duo">
-    <div class="duo__img"><img src="../assets/img/about-history.jpg" alt="Historia"></div>
-    <div class="duo__text">
-      <p class="pg-section__eyebrow">Historia</p>
-      <h2 class="pg-section__title">Desde 2009 transformando ciudades</h2>
-      <p class="pg-section__body">Global Inmobiliaria nació con la visión de democratizar el acceso a vivienda de calidad. Comenzamos con un pequeño proyecto de 12 apartamentos y hoy somos referente regional en desarrollo inmobiliario sostenible.</p>
-      <br>
-      <p class="pg-section__body">Cada proyecto que entregamos representa años de trabajo y el compromiso inquebrantable de cumplir lo que prometemos.</p>
+    <div class="metrics">
+      <div class="metric">
+        <p class="metric__num">15<em>+</em></p>
+        <p class="metric__label">Años de experiencia</p>
+      </div>
+      <div class="metric">
+        <p class="metric__num">1,200<em>+</em></p>
+        <p class="metric__label">Familias beneficiadas</p>
+      </div>
+      <div class="metric">
+        <p class="metric__num">48</p>
+        <p class="metric__label">Proyectos entregados</p>
+      </div>
+      <div class="metric">
+        <p class="metric__num">6</p>
+        <p class="metric__label">Países de presencia</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Filosofía -->
-  <div id="filosofia" class="duo flip">
-    <div class="duo__img"><img src="../assets/img/about-philosophy.jpg" alt="Filosofía"></div>
-    <div class="duo__text">
-      <p class="pg-section__eyebrow">Filosofía</p>
-      <h2 class="pg-section__title">Calidad sin concesiones</h2>
-      <p class="pg-section__body">Creemos que un buen hogar no es un lujo, es un derecho. Por eso diseñamos cada espacio pensando en quien lo va a vivir: distribución, luz natural, materiales y acabados responden a las necesidades reales.</p>
-      <br>
-      <p class="pg-section__body">Nuestra filosofía: <strong>calidad, honestidad y entrega puntual.</strong></p>
+    <!-- Historia -->
+    <div id="historia" class="duo">
+      <div class="duo__img"><img src="../assets/img/about-history.jpg" alt="Historia"></div>
+      <div class="duo__text">
+        <p class="pg-section__eyebrow">Historia</p>
+        <h2 class="pg-section__title">Desde 2009 transformando ciudades</h2>
+        <p class="pg-section__body">Inmobyte nació con la visión de democratizar el acceso a vivienda de calidad.
+          Comenzamos con un pequeño proyecto de 12 apartamentos y hoy somos referente regional en desarrollo
+          inmobiliario sostenible.</p>
+        <br>
+        <p class="pg-section__body">Cada proyecto que entregamos representa años de trabajo y el compromiso
+          inquebrantable de cumplir lo que prometemos.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Premios -->
-  <section id="premios" class="pg-section">
-    <p class="pg-section__eyebrow">Reconocimientos</p>
-    <h2 class="pg-section__title">Premios y certificaciones</h2>
-    <p class="pg-section__body" style="margin-bottom:48px;">Nuestro trabajo ha sido reconocido por las principales organizaciones del sector a nivel regional.</p>
-    <div class="awards">
-      <div class="award"><p class="award__year">2023</p><p class="award__name">Mejor Desarrollador Regional</p><p class="award__org">Asociación Centroamericana de Bienes Raíces</p></div>
-      <div class="award"><p class="award__year">2022</p><p class="award__name">Certificación LEED Gold</p><p class="award__org">U.S. Green Building Council</p></div>
-      <div class="award"><p class="award__year">2021</p><p class="award__name">Premio a la Innovación</p><p class="award__org">Cámara de Construcción Nacional</p></div>
+    <!-- Filosofía -->
+    <div id="filosofia" class="duo flip">
+      <div class="duo__img"><img src="../assets/img/about-philosophy.jpg" alt="Filosofía"></div>
+      <div class="duo__text">
+        <p class="pg-section__eyebrow">Filosofía</p>
+        <h2 class="pg-section__title">Calidad sin concesiones</h2>
+        <p class="pg-section__body">Creemos que un buen hogar no es un lujo, es un derecho. Por eso diseñamos cada
+          espacio pensando en quien lo va a vivir: distribución, luz natural, materiales y acabados responden a las
+          necesidades reales.</p>
+        <br>
+        <p class="pg-section__body">Nuestra filosofía: <strong>calidad, honestidad y entrega puntual.</strong></p>
+      </div>
     </div>
-  </section>
 
-  <!-- Equipo -->
-  <section class="pg-section" style="padding-bottom:0;">
-    <p class="pg-section__eyebrow">Equipo</p>
-    <h2 class="pg-section__title">Las personas detrás de Global</h2>
-  </section>
-  <div class="team">
-    <div class="member"><div class="member__avatar">👨‍💼</div><p class="member__name">Carlos Mendoza</p><p class="member__role">CEO & Fundador</p><p class="member__bio">Arquitecto con 20 años de experiencia. Fundó Global con la misión de construir espacios que mejoren la calidad de vida.</p></div>
-    <div class="member"><div class="member__avatar">👩‍💼</div><p class="member__name">Ana Ríos</p><p class="member__role">Directora de Proyectos</p><p class="member__bio">Ingeniera civil especialista en gestión de proyectos. Garantiza que cada entrega se cumpla en tiempo y forma.</p></div>
-    <div class="member"><div class="member__avatar">👨‍🎨</div><p class="member__name">Diego Palma</p><p class="member__role">Director de Diseño</p><p class="member__bio">Formado en Barcelona. Cada proyecto lleva su sello: espacios funcionales que también son estéticamente memorables.</p></div>
-  </div>
+    <!-- Premios -->
+    <section id="premios" class="pg-section">
+      <p class="pg-section__eyebrow">Sobre nuestra empresa</p>
+      <h2 class="pg-section__title">Nuestra misión, visión y valores</h2>
+      <div class="awards">
+        <div class="award">
+          <div class="duo__img"><img src="../assets/img/mision.png" alt="Mision"></div>
+          <p class="award__name">Misión</p>
+          <p class="award__org">Brindar soluciones inmobiliarias confiables, ofreciendo propiedades que se adapten a las
+            necesidades de nuestros clientes.</p>
+        </div>
+        <div class="award">
+          <div class="duo__img"><img src="../assets/img/vision.png" alt="Vision"></div>
+          <p class="award__name">Visión</p>
+          <p class="award__org">Ser la inmobiliaria líder en el país, reconocida por su innovación, confianza y
+            excelencia en el servicio.</p>
+        </div>
+        <div class="award">
+          <div class="duo__img"><img src="../assets/img/confianza.png" alt="Mision"></div>
+          <p class="award__name">Valores</p>
+          <p class="award__org">Confianza</p>
+          <p class="award__org">Compromiso</p>
+          <p class="award__org">Innovación</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="cta-strip">
-    <h2>¿Listo para encontrar tu espacio?</h2>
-    <p>Explora nuestros proyectos o habla directamente con un asesor.</p>
-    <div class="btns">
-      <a class="btn btn--solid" href="proyectos.html">Ver proyectos</a>
-      <a class="btn btn--outline" href="contacto.html">Contáctanos</a>
+    <!-- Equipo -->
+    <section class="pg-section" style="padding-bottom:0;">
+      <p class="pg-section__eyebrow">Equipo</p>
+      <h2 class="pg-section__title">Las personas detrás de Global</h2>
+    </section>
+    <div class="team">
+      <div class="member">
+        <div class="member__avatar">👨‍💼</div>
+        <p class="member__name">Carlos Mendoza</p>
+        <p class="member__role">CEO & Fundador</p>
+        <p class="member__bio">Arquitecto con 20 años de experiencia. Fundó Global con la misión de construir espacios
+          que mejoren la calidad de vida.</p>
+      </div>
+      <div class="member">
+        <div class="member__avatar">👩‍💼</div>
+        <p class="member__name">Ana Ríos</p>
+        <p class="member__role">Directora de Proyectos</p>
+        <p class="member__bio">Ingeniera civil especialista en gestión de proyectos. Garantiza que cada entrega se
+          cumpla en tiempo y forma.</p>
+      </div>
+      <div class="member">
+        <div class="member__avatar">👨‍🎨</div>
+        <p class="member__name">Diego Palma</p>
+        <p class="member__role">Director de Diseño</p>
+        <p class="member__bio">Formado en Barcelona. Cada proyecto lleva su sello: espacios funcionales que también son
+          estéticamente memorables.</p>
+      </div>
     </div>
-  </div>
 
-</main>
+    <div class="cta-strip">
+      <h2>¿Listo para encontrar tu espacio?</h2>
+      <p>Explora nuestros proyectos o habla directamente con un asesor.</p>
+      <div class="btns">
+        <a class="btn btn--solid" href="proyectos.html">Ver proyectos</a>
+        <a class="btn btn--outline" href="contacto.html">Contáctanos</a>
+      </div>
+    </div>
 
-<footer class="pg-footer">
-  <span>© 2025 Global Inmobiliaria</span>
-  <a href="contacto.html">Contáctanos</a>
-</footer>
+  </main>
+
+  <footer class="pg-footer">
+    <span>© 2025 Global Inmobiliaria</span>
+    <a href="contacto.html">Contáctanos</a>
+  </footer>
 </body>
+
 </html>
