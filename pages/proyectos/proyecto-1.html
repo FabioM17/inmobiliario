@@ -1,158 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Casa 1 - InmoByte</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../assets/css/main.css">
-  <link rel="stylesheet" href="../../assets/css/pages.css">
-  <style>
-    .proj-hero { position:relative; height:62vh; min-height:420px; overflow:hidden; }
-    .proj-hero img { width:100%; height:100%; object-fit:cover; filter:brightness(.38); display:block; }
-    .proj-hero__content { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:60px 48px; }
-    .proj-hero__tag { font-size:.65rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#2563eb; margin-bottom:12px; }
-    .proj-hero__title { font-size:clamp(2.6rem,6vw,5.2rem); font-weight:900; line-height:1; margin:0 0 14px; }
-    .proj-hero__desc { font-size:.95rem; font-weight:300; color:rgba(255,255,255,.55); max-width:480px; }
-    .stats { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
-    .stat { padding:40px 48px; border-right:1px solid rgba(255,255,255,.06); }
-    .stat:last-child { border-right:none; }
-    .stat__label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:8px; }
-    .stat__val { font-size:1.05rem; font-weight:900; }
-    .proj-body { display:grid; grid-template-columns:1.5fr 1fr; gap:32px; padding:64px 48px; }
-    .proj-main { padding:0; border-right:none; }
-    .proj-main p { font-size:.9rem; font-weight:300; color:rgba(255,255,255,.52); line-height:1.9; }
-    .media-3d-box { width:100%; height:100%; min-height:300px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,0.06); border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .proj-aside { grid-column:1 / -1; padding:32px 0; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); margin-top:16px; }
-    .aside-label { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:18px; }
-    .amenity-list { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:24px; }
-    .amenity-list li { display:flex; align-items:center; gap:10px; font-size:.8rem; font-weight:300; color:rgba(255,255,255,.52); }
-    .amenity-list li::before { content:''; display:block; width:5px; height:5px; border-radius:50%; background:#2563eb; flex-shrink:0; }
-    .cta-box { margin-top:24px; padding:28px; border:1px solid rgba(37,99,235,.3); background:rgba(37,99,235,.06); display:flex; justify-content:space-between; align-items:center; }
-    .cta-box p { font-size:.8rem; color:rgba(255,255,255,.42); margin:0; }
-    .media-gallery { grid-column:1 / -1; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,220px)); justify-content:center; gap:16px; margin-top:16px; }
-    .media-gallery img { width:100%; height:140px; object-fit:cover; border-radius:6px; cursor:pointer; border:1px solid rgba(255,255,255,0.06); transition:transform 0.2s ease,opacity 0.2s ease; }
-    .media-gallery img:hover { transform:translateY(-3px); opacity:0.8; border-color:rgba(37,99,235,0.5); }
-    .lightbox { display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease; }
-    .lightbox.is-active { display:flex; opacity:1; }
-    .lightbox-content { max-width:90%; max-height:90vh; border-radius:8px; box-shadow:0 4px 25px rgba(0,0,0,0.5); object-fit:contain; }
-    .lightbox-close { position:absolute; top:20px; right:40px; color:#fff; font-size:45px; font-weight:bold; cursor:pointer; transition:color 0.2s ease; }
-    .lightbox-close:hover { color:#2563eb; }
-    .proj-nav { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(255,255,255,.06); }
-    .proj-nav__item { padding:32px 48px; text-decoration:none; color:#fff; transition:background .2s; }
-    .proj-nav__item:hover { background:rgba(255,255,255,.03); }
-    .proj-nav__item--next { border-left:1px solid rgba(255,255,255,.06); text-align:right; }
-    .proj-nav__dir { font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-bottom:6px; }
-    .proj-nav__name { font-size:.9rem; font-weight:700; }
-    @media(max-width:900px){ .proj-body{grid-template-columns:1fr;padding:40px 24px;} .cta-box{flex-direction:column;gap:16px;text-align:center;} }
-    @media(max-width:560px){ .proj-hero__content,.proj-main,.proj-aside,.proj-nav__item{padding:40px 24px;} .stat{padding:28px 24px;} }
-  </style>
+    <title>Residencia Aura - InmoByte</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/pages.css">
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <header class="pg-header">
-  <a class="pg-header__logo" href="../../index.html">
-    <img src="../../assets/img/logo.png" alt="InmoByte">
-  </a>
-  <ul class="pg-header__nav">
-    <li><a href="../../index.html">Home</a></li>
-    <li><a href="../proyectos.html" class="is-active">Proyectos</a></li>
-    <li><a href="../nosotros.html">Nosotros</a></li>
-    <li><a href="../contacto.html">Contacto</a></li>
-  </ul>
+    <a class="pg-header__logo" href="../../index.html">
+        <img src="../../assets/img/logo.png" alt="InmoByte">
+    </a>
+    <ul class="pg-header__nav">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../proyectos.html" class="is-active">Proyectos</a></li>
+        <li><a href="../nosotros.html">Nosotros</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+    </ul>
 </header>
 
 <main class="pg-wrap">
-  <div class="proj-hero">
-    <img src="../../assets/img/work-victory.jpg" alt="Casa">
-    <div class="proj-hero__content">
-      <p class="proj-hero__tag">Casa</p>
-      <h1 class="proj-hero__title">Casa</h1>
-      <p class="proj-hero__desc">Casa Moderna de 2 plantas</p>
-    </div>
-  </div>
-
-  <div class="stats">
-    <div class="stat"><p class="stat__label">Área total</p><p class="stat__val">160 m²</p></div>
-    <div class="stat"><p class="stat__label">Cuartos</p><p class="stat__val">4</p></div>
-    <div class="stat"><p class="stat__label">Entrega</p><p class="stat__val">Febrero 2026</p></div>
-    <div class="stat"><p class="stat__label">Precio</p><p class="stat__val">$250,000</p></div>
-  </div>
-
-  <div class="proj-body">
-
-    <div class="proj-main">
-      <p class="pg-section__eyebrow">Descripción</p>
-      <h2 class="pg-section__title" style="margin-bottom:24px;">Acerca del proyecto</h2>
-      <p>Moderna casa de 2 plantas diseñada para tu comodidad y tranquilidad. Cuenta con cocina totalmente equipada, estacionamiento privado y seguridad 24/7. Además, disfruta de exclusivas áreas comunes con piscina y salón social.</p>
+    <div class="proj-hero">
+        <img src="../../assets/img/work-victory.jpg" alt="Casa">
+        <div class="proj-hero__content">
+            <p class="proj-hero__tag">Residencia</p>
+            <h1 class="proj-hero__title">Residencia Aura</h1>
+            <p class="proj-hero__desc">Diseño moderno y geométrico de dos niveles que destaca por el contraste armónico entre superficies blancas y cálidos revestimientos de madera horizontal. La propiedad cuenta con un garaje integrado de doble plaza, ventanales de gran formato que maximizan la luz natural y un prominente balcón superior con barandilla de vidrio que aporta sofisticación y vistas despejadas.</p>
+        </div>
     </div>
 
-    <div class="media-3d-box">
-      <span style="color: rgba(255,255,255,0.28); font-size: 0.8rem">[ Contenedor del Modelo 3D ]</span>
+    <div class="stats">
+        <div class="stat"><p class="stat__label">Área total</p>
+            <p class="stat__val">160 m²</p></div>
+        <div class="stat"><p class="stat__label">Cuartos</p>
+            <p class="stat__val">4</p></div>
+        <div class="stat"><p class="stat__label">Entrega</p>
+            <p class="stat__val">Febrero 2026</p></div>
+        <div class="stat"><p class="stat__label">Precio</p>
+            <p class="stat__val">$250,000</p></div>
     </div>
 
-    <aside class="proj-aside">
-      <p class="aside-label">Especificaciones y Amenidades</p>
-      <ul class="amenity-list">
-        <li>Piscina Mediana</li>
-        <li>Cocina equipada</li>
-        <li>Salón social</li>
-        <li>Estacionamiento privado</li>
-        <li>Seguridad 24/7</li>
-      </ul>
-    </aside>
+    <div class="proj-body">
 
-    <div class="media-gallery">
-      <img src="../../assets/img/CasaUno/imagen1.png" alt="angulo-1">
-      <img src="../../assets/img/CasaUno/imagen2.png" alt="angulo-2">
-      <img src="../../assets/img/CasaUno/imagen3.png" alt="angulo-3">
-      <img src="../../assets/img/CasaUno/imagen4.png" alt="angulo-4">
-      <img src="../../assets/img/CasaUno/imagen5.png" alt="angulo-5">
-      <img src="../../assets/img/CasaUno/imagen6.png" alt="angulo-6">
-    </div>
+        <div class="proj-main">
+            <p class="pg-section__eyebrow">Descripción</p>
+            <h2 class="pg-section__title" style="margin-bottom:24px;">Acerca del proyecto</h2>
+            <p>Residencia Aura fue concebida como un refugio contemporáneo que prioriza la habitabilidad y el confort a través de una estética minimalista. El uso estratégico de la madera horizontal no solo añade calidez a la volumetría blanca, sino que actúa como un elemento articulador que define la entrada principal y los espacios privados del nivel superior.
 
-   <aside class="proj-aside">
-    <div class="cta-box">
-      <p>¿Te interesa? Un asesor te dará toda la información sin compromiso.</p>
-      <a class="btn btn--solid" href="../contacto.html">Solicitar información</a>
+                El diseño interior-exterior fluye orgánicamente gracias a las grandes aberturas de cristal, convirtiendo la terraza lateral pavimentada en una extensión natural del área social, perfecta para la convivencia en un entorno privado y sereno.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap:0;">
+            <div class="media-3d-box" style="padding:0;; min-height: 420px; border-radius: 8px; overflow:hidden;">
+                <model-viewer
+                        id="visor3d"
+                        src="../../assets/Casas/CasaUno/CasaUno-PrimerPlanta.glb"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        style="width: 100%; height: 100%; background-color: #1a1a1a;">
+                </model-viewer>
+            </div>
+
+            <div style="display: flex; gap:10px;flex-wrap: wrap;justify-content: center;padding: 14px 0 4px;">
+                <button onclick="cambiarVista(this,'../../assets/Casas/CasaUno/CasaUno-PrimerPlanta.glb')"
+                        class="btn-vista-activo">Planta 1
+                </button>
+                <button onclick="cambiarVista(this,'../../assets/Casas/CasaUno/CasaUno-SegundaPlanta.glb')"
+                        class="btn-vista">Planta 2
+                </button>
+                <button onclick="cambiarVista(this,'../../assets/Casas/CasaUno/CasaUno-Completa.glb')"
+                        class="btn-vista">Vista General
+                </button>
+            </div>
+        </div>
+
+        <aside class="proj-aside">
+            <p class="aside-label">Especificaciones y Amenidades</p>
+            <ul class="amenity-list">
+                <li>Piscina Mediana</li>
+                <li>Cocina equipada</li>
+                <li>Salón social</li>
+                <li>Estacionamiento privado</li>
+                <li>Seguridad 24/7</li>
+            </ul>
+        </aside>
+
+        <div class="media-gallery">
+            <img src="../../assets/img/1CasaUno_Imagenes/1-casa.png" alt="angulo-1">
+            <img src="../../assets/img/1CasaUno_Imagenes/2-casa.png" alt="angulo-2">
+            <img src="../../assets/img/1CasaUno_Imagenes/3-casa.png" alt="angulo-3">
+            <img src="../../assets/img/1CasaUno_Imagenes/4-casa.png" alt="angulo-4">
+            <img src="../../assets/img/1CasaUno_Imagenes/5-casa.png" alt="angulo-5">
+            <img src="../../assets/img/1CasaUno_Imagenes/6-casa.png" alt="angulo-6">
+        </div>
+
+        <aside class="proj-aside">
+            <div class="cta-box">
+                <p>¿Te interesa? Un asesor te dará toda la información sin compromiso.</p>
+                <a class="btn btn--solid" href="../contacto.html">Solicitar información</a>
+            </div>
+        </aside>
     </div>
-  </aside>
-</div>
-  <nav class="proj-nav">
-    <a class="proj-nav__item" href="../proyectos.html"><p class="proj-nav__dir">← Volver</p><p class="proj-nav__name">Todos los proyectos</p></a>
-    <a class="proj-nav__item proj-nav__item--next" href="proyecto-2.html"><p class="proj-nav__dir">Siguiente →</p><p class="proj-nav__name">Jardines del Norte</p></a>
-  </nav>
+    <nav class="proj-nav">
+        <a class="proj-nav__item" href="../proyectos.html"><p class="proj-nav__dir">← Volver</p>
+            <p class="proj-nav__name">Todos los proyectos</p></a>
+        <a class="proj-nav__item proj-nav__item--next" href="proyecto-2.html"><p class="proj-nav__dir">Siguiente →</p>
+            <p class="proj-nav__name">Residencia Prisma</p></a>
+    </nav>
 </main>
 
 <footer class="pg-footer">
-  <span>© 2025 InmoByte</span>
-  <a href="../contacto.html">Contáctanos</a>
+    <span>© 2025 InmoByte</span>
+    <a href="../contacto.html">Contáctanos</a>
 </footer>
 <div id="miLightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-content" src="" alt="Imagen ampliada">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Imagen ampliada">
 </div>
 
-<script>
-  const lightbox = document.getElementById('miLightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.querySelector('.lightbox-close');
-  const imagenesGaleria = document.querySelectorAll('.media-gallery img');
-
-  imagenesGaleria.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('is-active');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('is-active');
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('is-active');
-    }
-  });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
