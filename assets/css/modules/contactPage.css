@@ -1,0 +1,163 @@
+
+    .contact-wrap { 
+        display:grid; 
+        grid-template-columns:1fr 480px; 
+        min-height:calc(100vh - 68px - 65px); 
+    }
+
+    /* Info */
+    .c-info { padding:72px 56px; 
+        border-right:1px solid rgba(255,255,255,.06); 
+        display:flex; flex-direction:column; 
+        justify-content:space-between; 
+    }
+    .c-details { margin-top:48px; 
+        display:flex; 
+        flex-direction:column; 
+        gap:40px; 
+    }
+    .c-detail__label { 
+        font-size:.6rem; 
+        font-weight:700; 
+        letter-spacing:.24em; 
+        text-transform:uppercase; 
+        color:rgba(255,255,255,.28); 
+        margin-bottom:8px; 
+    }
+    .c-detail__val { 
+        font-size:.95rem; 
+        font-weight:300; color:#fff; 
+        text-decoration:none; display:block; 
+        line-height:1.65; 
+        transition:color .2s; 
+    }
+    a.c-detail__val:hover { 
+        color:#2563eb; 
+    }
+    .socials { 
+        display:flex; 
+        gap:12px; 
+        margin-top:56px; 
+    }
+    .social { 
+        display:flex; 
+        align-items:center; 
+        justify-content:center; 
+        width:42px; height:42px; 
+        border:1px solid rgba(255,255,255,.14); 
+        color:rgba(255,255,255,.45); 
+        text-decoration:none; 
+        font-size:.65rem; 
+        font-weight:700; letter-spacing:.06em; 
+        transition:all .2s; 
+    }
+    .social:hover { 
+        border-color:#2563eb; 
+        color:#2563eb; 
+    }
+
+    /* Formulario */
+    .c-form-col { 
+        padding:72px 56px; 
+        background:#0f0f0f; 
+    }
+    .c-form-col h2 { 
+        font-size:1.5rem; 
+        font-weight:900; 
+        margin-bottom:40px; 
+    }
+    .form-group { 
+        position:relative; 
+        margin-bottom:36px; 
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width:100%; 
+      background:transparent; 
+      border:none; 
+      border-bottom:1px solid rgba(255,255,255,.18);
+      color:#fff; 
+      font-family:'Montserrat',sans-serif; 
+      font-size:.88rem; 
+      font-weight:300;
+      padding:12px 0; 
+      outline:none; 
+      transition:border-color .2s; 
+      -webkit-appearance: none; 
+      appearance: none;
+      resize:none;
+    }
+    .form-group select option { 
+        background:#111; 
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-bottom-color:#2563eb; }
+    .form-group label {
+      position:absolute; 
+      top:12px; left:0; 
+      font-size:.66rem; 
+      font-weight:700;
+      letter-spacing:.16em; 
+      text-transform:uppercase; 
+      color:rgba(255,255,255,.3);
+      pointer-events:none; 
+      transition:all .22s;
+    }
+    .form-group input:focus ~ label,
+    .form-group input.filled ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea.filled ~ label,
+    .form-group select:focus ~ label,
+    .form-group select.filled ~ label {
+      top:-14px; 
+      font-size:.58rem; 
+      color:#2563eb;
+    }
+    .form-group textarea { 
+        min-height:110px; 
+        display:block; }
+    .submit-row { 
+        display:flex; 
+        align-items:center; 
+        justify-content:space-between; 
+        margin-top:8px; 
+    }
+
+    .submit-note { 
+        font-size:.7rem; 
+        color:rgba(255,255,255,.28); 
+    }
+    .success-msg { 
+        display:none; 
+        margin-top:20px; 
+        padding:16px 20px; 
+        border:1px solid rgba(37,99,235,.4); 
+        background:rgba(37,99,235,.08); 
+        font-size:.82rem; 
+        color:rgba(255,255,255,.7); 
+    }
+
+    @media(max-width:900px) {
+      .contact-wrap { 
+        grid-template-columns:1fr; 
+    }
+      .c-info { 
+        border-right:none; 
+        border-bottom:1px solid rgba(255,255,255,.06); 
+        padding:56px 32px; 
+    }
+      .c-form-col { 
+        padding:56px 32px; 
+    }
+    }
+    @media(max-width:560px) {
+      .c-info, .c-form-col { 
+        padding:40px 24px; 
+    }
+      .submit-row { 
+        flex-direction:column; 
+        gap:16px; 
+        align-items:flex-start; 
+    }
+    }
+ 

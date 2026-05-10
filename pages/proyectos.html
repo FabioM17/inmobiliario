@@ -6,115 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/pages.css">
-  <style>
-    /* Filtros */
-    .filters {
-      padding: 28px 48px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .filter-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.4);
-      font-family: 'Montserrat', sans-serif;
-      font-size: .66rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      padding: 8px 20px;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .filter-btn:hover, .filter-btn.is-active {
-      background: #2563eb;
-      border-color: #2563eb;
-      color: #fff;
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .card {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      background: #111;
-    }
-
-    .card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: brightness(.55);
-      transition: transform .55s ease, filter .55s ease;
-    }
-    .card:hover img { transform: scale(1.07); filter: brightness(.3); }
-
-    .card__num {
-      position: absolute;
-      top: 20px; right: 20px;
-      font-size: .62rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      color: rgba(255,255,255,.2);
-    }
-    .card__body {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 28px;
-    }
-    .card__tag {
-      font-size: .6rem;
-      font-weight: 700;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: #2563eb;
-      margin-bottom: 6px;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: all .3s ease .05s;
-    }
-    .card__title { font-size: 1.15rem; font-weight: 900; margin-bottom: 6px; }
-    .card__desc {
-      font-size: .78rem;
-      font-weight: 300;
-      color: rgba(255,255,255,.55);
-      line-height: 1.5;
-      margin-bottom: 18px;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: all .3s ease .1s;
-    }
-    .card__link {
-      font-size: .66rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: all .3s ease .15s;
-    }
-    .card__link svg { width: 13px; fill: #fff; }
-    .card:hover .card__tag,
-    .card:hover .card__desc,
-    .card:hover .card__link { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2,1fr); } .filters { padding: 24px; } }
-    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="../assets/css/modules/proyectosGen.css">
 </head>
 <body>
 
@@ -140,74 +32,74 @@
   <div class="filters">
     <button class="filter-btn is-active" data-filter="all">Todos</button>
     <button class="filter-btn" data-filter="residencial">Residencial</button>
-    <button class="filter-btn" data-filter="casa">Casa</button>
+    <button class="filter-btn" data-filter="apartamento">Apartamento</button>
     <button class="filter-btn" data-filter="comercial">Comerciales</button>
   </div>
 
   <div class="grid">
 
-    <a class="card" href="proyectos/proyecto-1.html" data-cat="casa">
-      <img src="../assets/img/work-victory.jpg" alt="Torre Mirando">
+    <a class="card" href="proyectos/proyecto-1.html" data-cat="residencial">
+      <img src="../assets/img/residencia aura.png" alt="Residencia Aura">
       <span class="card__num">01</span>
       <div class="card__body">
-        <p class="card__tag">Casa</p>
-        <h2 class="card__title">Casa</h2>
+        <p class="card__tag">Residencia</p>
+        <h2 class="card__title">Residencia Aura</h2>
         <p class="card__desc">Moderna casa de 2 plantas diseñada para tu comodidad y tranquilidad. Cuenta con cocina totalmente equipada, estacionamiento privado y seguridad 24/7. Además, disfruta de exclusivas áreas comunes con piscina y salón social, entrega febrero 2026.</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>
 
     <a class="card" href="proyectos/proyecto-2.html" data-cat="residencial">
-      <img src="../assets/img/work-metiew-smith.jpg" alt="Jardines del Norte">
+      <img src="../assets/img/Residencia Prisma.png" alt="Residencia Prisma">
       <span class="card__num">02</span>
       <div class="card__body">
         <p class="card__tag">Residencial</p>
-        <h2 class="card__title">Jardines del Norte</h2>
+        <h2 class="card__title">Residencia Prisma</h2>
         <p class="card__desc">Exclusivo complejo boutique de solo 10 casas diseñado para tu tranquilidad. Cuenta con seguridad 24/7, estacionamiento privado y de visitas, además de extensas áreas verdes y canchas deportivas ideales para armar un buen partido de domingo sin salir de casa.</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>
 
     <a class="card" href="proyectos/proyecto-3.html" data-cat="comercial">
-      <img src="../assets/img/work-alex-nowak.jpg" alt="Centro Empresarial">
+      <img src="../assets/img/3CasaTres_Imagenes/1-casa.png" alt="Centro Empresarial">
       <span class="card__num">03</span>
       <div class="card__body">
         <p class="card__tag">Comercial</p>
-        <h2 class="card__title">Centro Empresarial</h2>
-        <p class="card__desc">Oficinas modernas en el distrito financiero. 12 pisos, 3,200 m².</p>
+        <h2 class="card__title">Plaza Nordic</h2>
+        <p class="card__desc">Centro comercial de arquitectura industrial-contemporánea que integra texturas de piedra, concreto visto y cristal..</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>
 
-    <a class="card" href="proyectos/proyecto-4.html" data-cat="comercial">
-      <img src="../assets/img/about-history.jpg" alt="Plaza Colón">
+    <a class="card" href="proyectos/proyecto-4.html" data-cat="residencial">
+      <img src="../assets/img/Res-cubik.jpg" alt="Plaza Colón">
       <span class="card__num">04</span>
       <div class="card__body">
-        <p class="card__tag">Comercial</p>
-        <h2 class="card__title">Plaza Colón</h2>
-        <p class="card__desc">Centro comercial en zona de alta afluencia. 64 locales, 8,000 m².</p>
+        <p class="card__tag">Residencial </p>
+        <h2 class="card__title">Residencial Cubik</h2>
+        <p class="card__desc">Propuesta residencial contemporánea de dos niveles definida por volúmenes geométricos nítidos. .</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>
 
-    <a class="card" href="proyectos/proyecto-5.html" data-cat="inversion">
-      <img src="../assets/img/about-philosophy.jpg" alt="Residencial El Bosque">
+    <a class="card" href="proyectos/proyecto-5.html" data-cat="apartamento">
+      <img src="../assets/img/5CasaCinco_Imagenes/8-casa.png" alt="Residencial El Bosque">
       <span class="card__num">05</span>
       <div class="card__body">
-        <p class="card__tag">Inversión</p>
-        <h2 class="card__title">Residencial El Bosque</h2>
-        <p class="card__desc">Alta plusvalía garantizada. ROI proyectado del 18% anual.</p>
+        <p class="card__tag">Apartamento</p>
+        <h2 class="card__title">Torre Lumina</h2>
+        <p class="card__desc">Exclusivo complejo habitacional de múltiples niveles con un lenguaje arquitectónico urbano contemporáneo. .</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>
 
-    <a class="card" href="proyectos/proyecto-6.html" data-cat="inversion">
-      <img src="../assets/img/about-winners.jpg" alt="Lotes Santa Cruz">
+    <a class="card" href="proyectos/proyecto-6.html" data-cat="residencial">
+      <img src="../assets/img/villa-noir.jpg" alt="Lotes Santa Cruz">
       <span class="card__num">06</span>
       <div class="card__body">
-        <p class="card__tag">Inversión</p>
-        <h2 class="card__title">Lotes Santa Cruz</h2>
-        <p class="card__desc">Lotes residenciales listos para construir con servicios completos.</p>
+        <p class="card__tag">Residencial</p>
+        <h2 class="card__title">Villa Noir</h2>
+        <p class="card__desc">Residencia de lujo que fusiona el estilo contemporáneo con detalles clásicos, destacando por su cubierta a cuatro aguas y un marcado contraste cromático. .</p>
         <span class="card__link">Ver proyecto <svg viewBox="0 0 150 118" xmlns="http://www.w3.org/2000/svg"><path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" transform="translate(0,118) scale(.1,-.1)"/></svg></span>
       </div>
     </a>

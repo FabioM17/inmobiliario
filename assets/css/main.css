@@ -32,7 +32,6 @@
     font-style: normal
 }
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -778,13 +777,13 @@ body {
 .intro--options > a {
     max-width: 250px;
     text-decoration: none;
-    color: #282828;
+    color: #FFFFFF;
     -webkit-transition: color .2s ease-in-out;
     transition: color .2s ease-in-out
 }
 
 .intro--options > a:hover {
-    color: #fff
+    color: #6479f0
 }
 
 .intro--options h3 {
@@ -1233,15 +1232,15 @@ body {
 }
 
 .about--options > a:nth-child(1) {
-    background-image: url("../img/abou-town.png")
+    background-image: url("../img/about1.jpg")
 }
 
 .about--options > a:nth-child(2) {
-    background-image: url("../img/abou-apartment.png")
+    background-image: url("../img/about2.jpg")
 }
 
 .about--options > a:nth-child(3) {
-    background-image: url("../img/abou-inversion.png")
+    background-image: url("../img/about3.jpg")
 }
 
 .about--options > a:hover h3 {
@@ -1336,7 +1335,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/contact-visual.png");
+    background-image: url("../img/map-El-Salvador.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat
